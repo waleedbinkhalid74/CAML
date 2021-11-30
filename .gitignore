@@ -7,3 +7,6 @@ results/
 results
 figures/
 hf.py
+adam_experiments.ipynb
+animation_manim/
+lbfgs_hf.pdf
