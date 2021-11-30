@@ -3,11 +3,11 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 class Net(nn.Module):
-	"""
-	This method defines the structure of the neural network.
-	Our neural network in this case had two convolution layers followed by two fully 
-	connected layers with the ReLU activation function and a softmax layer at the end.
-	"""
+    """
+    Our neural network in this case had two convolution layers followed by two fully connected layers
+     with the ReLU activation function and a softmax layer at the end.
+
+    """
     def __init__(self):
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
@@ -16,11 +16,15 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(320, 50)
         self.fc2 = nn.Linear(50, 10)
 
+
     def forward(self, x):
-	"""
-	this method defines the forward pass of the network defined above.
-	
-	"""
+        """
+        this method defines the forward pass of the network defined above.
+        Args:
+            x: Images shaped as vectors.
+        Returns: Classification output probability of the network
+
+        """
         x = F.relu(F.max_pool2d(self.conv1(x), 2))
         x = F.relu(F.max_pool2d(self.conv2_drop(self.conv2(x)), 2))
         x = x.view(-1, 320)
