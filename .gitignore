@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+__pycache__/
+fs_mi.pdf
+momentum_optimizer_comparision.pdf
+momentum_optimizers.pgf
+results/
+results
+figures/
+hf.py
